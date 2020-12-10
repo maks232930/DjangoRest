@@ -10,10 +10,9 @@ class Post(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['-data_created']
+        ordering = ['-date_created']
 
 
 class Vote(models.Model):
-    """Модель голосов"""
     voter = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
